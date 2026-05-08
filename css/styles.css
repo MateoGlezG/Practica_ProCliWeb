@@ -5,6 +5,7 @@
 
 /*MAPA*/
  #mapa-leaflet {
+    margin-top: 2vh;
      width: 100%;
      height: clamp(260px, 50vh, 520px);
 }
@@ -43,15 +44,35 @@ main{
 
 #panelInicio{
     background-color: #fffafb;
-    width: 60%;
-    height: 40vh;
-    border-radius: 10px;
+    width: 80%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#panelInicio h1{
+    color: black;
+}
+
+#panelInicio span{
+    color: #58A4B0;
+}
+
+#panelInicio hr{
+    border-top: 2px solid #002faf;
+}
+
+#panelInicio p{
+    padding-top: 1vh;
 }
 
 .inicio{ /*clase para estilar la ventana central de inicio, hay que quitarla en las demás*/
     display:flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../multimedia/fondo.png");
+    background-size: cover;
+    padding-bottom: 20vh;
 }
 
 /*barra lateral*/
