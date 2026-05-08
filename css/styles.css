@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+/*MAPA*/
+ #mapa-leaflet {
+     width: 100%;
+     height: clamp(260px, 50vh, 520px);
+}
+
+.leaflet-tile {
+    outline: 1px solid transparent;
+}
+
+/*Barra navegacion*/
+nav{
+    background-color:#fffafb ;
+}
+
+.nav-item-bike{
+    border-right: #0d1821 solid 1px;
+    padding-right: 2vh;
+}
+.nav-item-car{
+    border-left: #0d1821 solid 1px;
+    padding-left: 1.5vh;
+}
+
+
+.linkPantalla{
+    display: flex;
+    color: #0d1821;
+    text-decoration: none;
+    align-items: center;
+}
+
+/*MAIN*/
+/*Inicio*/
+main{
+  background-color: #344966;  
+}
+
+#panelInicio{
+    background-color: #fffafb;
+    width: 60%;
+    height: 40vh;
+    border-radius: 10px;
+}
+
+.inicio{ /*clase para estilar la ventana central de inicio, hay que quitarla en las demás*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*barra lateral*/
+aside{
+    background-color: #344966;
+    color: #0d1821;
+}
+
+aside div{
+    background-color: #fffafb;
+    border-radius: 10px;
+    height: 95vh;
+    padding: 5%;
+}
