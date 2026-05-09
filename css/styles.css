@@ -88,6 +88,10 @@ aside div{
     padding: 5%;
 }
 
+#menuBicicletas{
+    height: clamp(260px, 50vh, 520px);
+}
+
 #modalEstacion {
     padding-top: 10%;
 }
