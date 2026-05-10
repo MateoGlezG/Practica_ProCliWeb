@@ -140,8 +140,10 @@
             tabla.empty(); //vacio la tabla antes de pintarla
 
             datosTrafico.forEach(function(datoFila){ //cada elemento que coge el foreach de datos trafico se lo pasa como datoFila que sera una fila a poner en la tabla
+                let claseIncidencia = pintaAtascos(datoFila); //pinto la fila si lleva atascos
+                
                 let nuevaFila = `
-                <tr>
+                <tr class="${claseIncidencia}">
                     <td> ${datoFila.id} </td>
                     <td>${datoFila.calle}</td>
                     <td>${datoFila.incidencias}</td>
@@ -150,5 +152,17 @@
                
                tabla.append(nuevaFila); //mete la fila al final de lo que haya antes
             });
+        }
+
+        function pintaAtascos(fila){
+            let claseIncidencia;
+            //si hay atasco pongo las clases definidas en css para ello
+            if(fila.incidencias > 0){
+                claseIncidencia = "atasco";
+            }
+            else{
+                claseIncidencia = "sin-atasco";
+            }
+            return claseIncidencia;
         }
 });

@@ -91,7 +91,7 @@ aside div{
     height: clamp(260px, 50vh, 520px);
 }
 #menuTrafico{
-    height: clamp(260px, 50vh, 520px);
+    height: clamp(260px, 60vh, 620px);
 
 }
 
@@ -117,4 +117,18 @@ aside div{
 
 .marcador-bici-rojo {
     background-color: red;
+}
+
+/*trafico*/
+.title-tabla{
+    background-color: #0d1821;
+    color: #fffafb;
+}
+
+/*estado trafico*/
+.atasco{
+    background-color:#c7575760;
+}
+.sin-atasco{
+    background-color: #58A4B060;
 }
