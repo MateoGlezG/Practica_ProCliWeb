@@ -84,18 +84,22 @@ aside{
 aside div{
     background-color: #fffafb;
     border-radius: 10px;
-    height: 95vh;
     padding: 5%;
 }
 
 #menuBicicletas{
     height: clamp(260px, 50vh, 520px);
 }
+#menuTrafico{
+    height: clamp(260px, 50vh, 520px);
+
+}
 
 #modalEstacion {
     padding-top: 10%;
 }
 
+/*marcadores de bici*/
 .marcador-bici-verde, .marcador-bici-naranja, .marcador-bici-rojo {
     width: 20px;
     height: 20px;

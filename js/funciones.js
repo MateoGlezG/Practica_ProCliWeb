@@ -35,6 +35,8 @@
         // MOSTRAR TRÁFICO
         $("#menuTrafico").removeClass("d-none");
         $("#panelTrafico").removeClass("d-none");
+
+        rellenaTabla("Centro"); //relleno la tabla en centro predefinido
     });
     //BOTON LOGO
     $("#btnLogo").click(function(e){
@@ -53,38 +55,6 @@
 
 
     //MAPA
-    // COORDENADAS DE CADA CIUDAD
-    const coordenadasCiudades = {
-        "Madrid": [40.4168, -3.7038],
-        "Barcelona": [41.3874, 2.1686],
-        "Valencia": [39.4699, -0.3763],
-        "Sevilla": [37.3891, -5.9845]
-    };
-    // Estaciones de ejemplo
-    const estacionesBicis = {
-        "Madrid": [
-            { nombre: "Puerta del Sol", coords: [40.4167, -3.7033], bicis: 12, espacios: 8 },
-            { nombre: "Atocha", coords: [40.4067, -3.6887], bicis: 5, espacios: 15 },
-            { nombre: "Puerta del Sol", coords: [40.4167, -3.7033], bicis: 12, espacios: 8 },
-            { nombre: "Atocha", coords: [40.4067, -3.6887], bicis: 5, espacios: 15 }
-        ],
-        "Barcelona": [
-            { nombre: "Plaza Cataluña", coords: [41.3870, 2.1700], bicis: 8, espacios: 12 },
-            { nombre: "Sagrada Familia", coords: [41.4036, 2.1744], bicis: 3, espacios: 17 }
-        ],
-        "Valencia": [
-        { nombre: "Ciudad de las Artes", coords: [39.4533, -0.3524], bicis: 20, espacios: 10 },
-        { nombre: "Mercado Central", coords: [39.4736, -0.3790], bicis: 4, espacios: 16 },
-        { nombre: "Torres de Serranos", coords: [39.4791, -0.3761], bicis: 7, espacios: 13 },
-        { nombre: "Estación del Norte", coords: [39.4666, -0.3774], bicis: 11, espacios: 9 },
-        { nombre: "Playa de la Malvarrosa", coords: [39.4800, -0.3260], bicis: 18, espacios: 2 }
-        ],
-        "Sevilla": [
-            { nombre: "Plaza de España", coords: [37.3771, -5.9869], bicis: 14, espacios: 6 },
-            { nombre: "Torre del Oro", coords: [37.3824, -5.9964], bicis: 6, espacios: 14 },
-            { nombre: "Catedral de Sevilla", coords: [37.3862, -5.9926], bicis: 2, espacios: 18 },
-        ]
-    };
     // YA NO ESTÁ DENTRO DE DOCUMENT READY, PARA PODER SER LLAMADO EN EL BOTON DE BICICLETAS Y RECALCULAR SU TAMAÑo
     const mapa = L.map('mapa-leaflet').setView(coordenadasCiudades["Madrid"], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -93,6 +63,7 @@
         dragging: !L.Browser.mobile,
         tap: !L.Browser.mobile
     }).addTo(mapa);
+
     // CAPA DE MARCADORES
     let capaMarcadores = L.layerGroup().addTo(mapa);
     // POR DEFECTO CARGAMOS MADRID
@@ -154,5 +125,30 @@
                 color = "rojo";
             }
             return color;
+        }
+
+        //funcion para el tabla Trafico
+        $("#menuTrafico select").change(function(){
+            let zona = $(this).val();
+            rellenaTabla(zona);
+        });
+
+        function rellenaTabla(zona){
+            let datosTrafico = traficoZonas[zona];
+            let tabla = $("#cuerpoTabla");
+
+            tabla.empty(); //vacio la tabla antes de pintarla
+
+            datosTrafico.forEach(function(datoFila){ //cada elemento que coge el foreach de datos trafico se lo pasa como datoFila que sera una fila a poner en la tabla
+                let nuevaFila = `
+                <tr>
+                    <td> ${datoFila.id} </td>
+                    <td>${datoFila.calle}</td>
+                    <td>${datoFila.incidencias}</td>
+                    <td>${datoFila.estado}</td>
+               </tr>`;
+               
+               tabla.append(nuevaFila); //mete la fila al final de lo que haya antes
+            });
         }
 });
