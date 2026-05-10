@@ -95,3 +95,22 @@ aside div{
 #modalEstacion {
     padding-top: 10%;
 }
+
+.marcador-bici-verde, .marcador-bici-naranja, .marcador-bici-rojo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.marcador-bici-verde {
+    background-color: green;
+}
+
+.marcador-bici-naranja {
+    background-color: orange;
+}
+
+.marcador-bici-rojo {
+    background-color: red;
+}
