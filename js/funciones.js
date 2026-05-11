@@ -143,11 +143,11 @@
                 let claseIncidencia = pintaAtascos(datoFila); //pinto la fila si lleva atascos
                 
                 let nuevaFila = `
-                <tr class="${claseIncidencia}">
-                    <td> ${datoFila.id} </td>
-                    <td>${datoFila.calle}</td>
-                    <td>${datoFila.incidencias}</td>
-                    <td>${datoFila.estado}</td>
+                <tr>
+                    <td class="${claseIncidencia}"> ${datoFila.id} </td>
+                    <td class="${claseIncidencia}">${datoFila.calle}</td>
+                    <td class="${claseIncidencia}">${datoFila.incidencias}</td>
+                    <td class="${claseIncidencia}">${datoFila.estado}</td>
                </tr>`;
                
                tabla.append(nuevaFila); //mete la fila al final de lo que haya antes
