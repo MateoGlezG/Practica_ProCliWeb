@@ -91,7 +91,7 @@ aside div{
     height: clamp(260px, 50vh, 520px);
 }
 #menuTrafico{
-    height: clamp(260px, 80vh, 720px);
+    height: clamp(260px, 60vh, 720px);
 
 }
 
@@ -121,7 +121,7 @@ aside div{
 
 /*trafico*/
 .tabla-titulo{
-    background-color: red !important; /*!important para sobrescribir estilos concretos de librerias porque dices que este estilo tiene prioridad, no abusar de ello solo para pequeños detalles*/
+    background-color: #0d1821 !important; /*!important para sobrescribir estilos concretos de librerias porque dices que este estilo tiene prioridad, no abusar de ello solo para pequeños detalles*/
     color: #fffafb !important;
 }
 
