@@ -42,7 +42,9 @@
         $("#menuTrafico").removeClass("d-none");
         $("#panelTrafico").removeClass("d-none");
 
-        rellenaTabla("Centro"); //relleno la tabla en centro predefinido
+        cargarTrafico("Centro").done(function(){
+            rellenaTabla("Centro");
+        }); //relleno la tabla en centro predefinido
     });
     //BOTON LOGO
     $("#btnLogo").click(function(e){
@@ -134,7 +136,9 @@
         //funcion para el tabla Trafico
         $("#menuTrafico select").change(function(){
             let zona = $(this).val();
-            rellenaTabla(zona);
+            cargarTrafico(zona).done(function(){
+                rellenaTabla(zona);
+            });
         });
 
         function rellenaTabla(zona){

@@ -1,7 +1,11 @@
   
+ //variables que se van a ir rellenando segun se saquen datos de los json
  let estacionesBicis = {};
+ let traficoZonas = {};
+
+ //BICICLETAS
  // DATOS DE CADA CIUDAD
- const ciudades = {
+const ciudades = {
     "Madrid": {
         location: [40.4168, -3.7038], // Coordenadas para aplicar el zoom en el mapa
         networkId: "bicimad" // Nombre de ID en la API para cargar las estaciones
@@ -42,4 +46,23 @@ function procesarEstaciones(data, ciudadSeleccionada){
         bicis: estacion.free_bikes,
         espacios: estacion.empty_slots
     }));
+}
+
+//DATOS DEL TRÁFICO
+function cargarTrafico(zona){
+    const url= "datos/trafico.json"; //const valores fijos a lo largo de una funcion 
+
+    return $.getJSON(url)
+    .done( function(data, textStatus, jqXHR){
+        const trafico = data[zona];
+
+        traficoZonas[zona] = trafico.map(fila =>({ //recorro cada fila y estraigo los datos del json
+            id: fila.id,
+            calle: fila.calle,
+            incidencias: fila.incidencias,
+            estado: fila.estado,
+        }))
+    }).fail(function(jqXHR, textStatus, erroThrown){
+        alert(`Error al cargar el Tráfico`);
+    });
 }
