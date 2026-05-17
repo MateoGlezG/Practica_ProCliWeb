@@ -1,31 +1,44 @@
-//la api usa la red de las bicis para identificar las estaciones 
-const ciudadesConfig = {
+  
+ let estacionesBicis = {};
+ // DATOS DE CADA CIUDAD
+ const ciudades = {
     "Madrid": {
-        location: [40.4168, -3.7038],
-        networkId: "BiciMAD"
+        location: [40.4168, -3.7038], // Coordenadas para aplicar el zoom en el mapa
+        networkId: "bicimad" // Nombre de ID en la API para cargar las estaciones
     },
     "Barcelona": {
         location: [41.3874, 2.1686],
-        networkId: "Bicing"
+        networkId: "bicing"
     },
     "Valencia": {
         location: [39.4699, -0.3763],
-        networkId: "Valenbisi"
+        networkId: "valenbisi"
     },
     "Sevilla": {
         location: [37.3891, -5.9845],
-        networkId: "Sevibi"
+        networkId: "sevici"
     }
 };
 
-function cargarEstaciones(ciudadSeleccionada){
-    const url = `https://api.citybik.es/v2/`;
 
-    $.getJson(url+ciudadesConfig[ciudadSeleccionada].networkId)
+function cargarEstaciones(ciudadSeleccionada){
+    const url = `https://api.citybik.es/v2/networks/`;
+
+    return $.getJSON(url + ciudades[ciudadSeleccionada].networkId)
     .done(function(data,textStatus, jqXHR){
-        let estaciones = data;
+        procesarEstaciones(data, ciudadSeleccionada);
 
     }).fail(function(jqXHR, textStatus, erroThrown){
-        alert(`Error al carhar las Bicicletas`);
+        alert(`Error al cargar las Bicicletas`);
     });
+}
+
+function procesarEstaciones(data, ciudadSeleccionada){
+    const estaciones = data.network.stations;
+    estacionesBicis[ciudadSeleccionada] = estaciones.map(estacion => ({
+        nombre: estacion.name,
+        coords: [estacion.latitude, estacion.longitude],
+        bicis: estacion.free_bikes,
+        espacios: estacion.empty_slots
+    }));
 }
