@@ -24,7 +24,7 @@
 function cargarEstaciones(ciudadSeleccionada){
     const url = `https://api.citybik.es/v2/networks/`;
 
-    return $.getJSON(url + ciudades[ciudadSeleccionada].networkId)
+    return $.getJSON(url + ciudades[ciudadSeleccionada].networkId) // Petición de JQuery AJAX
     .done(function(data,textStatus, jqXHR){
         procesarEstaciones(data, ciudadSeleccionada);
 
@@ -33,6 +33,7 @@ function cargarEstaciones(ciudadSeleccionada){
     });
 }
 
+// Ordena los datos de las estaciones para despues usarlas bien en el modal y en el mapa
 function procesarEstaciones(data, ciudadSeleccionada){
     const estaciones = data.network.stations;
     estacionesBicis[ciudadSeleccionada] = estaciones.map(estacion => ({
