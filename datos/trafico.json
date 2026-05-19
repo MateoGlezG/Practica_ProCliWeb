@@ -9,7 +9,7 @@
         {"id":7, "calle":"Bravo Murillo","incidencias":1 ,"estado":"Activo"},
         {"id":8, "calle":"Calle Velazquez","incidencias":1 ,"estado":"Activo"},
         {"id":9, "calle":"Ronda de Valencia","incidencias":0 ,"estado":"Inactivo"},
-        {"id":10," calle":"Plaza España","incidencias":1 ,"estado":"Activo"}
+        {"id":10,"calle":"Plaza España","incidencias":1 ,"estado":"Activo"}
     ],
     "Norte":[
         {"id":1, "calle":"Paseo de la Castellana", "incidencias":2, "estado":"Activo"},
@@ -21,7 +21,7 @@
         {"id":7, "calle":"Calle Costa Rica", "incidencias":1, "estado":"Activo"},
         {"id":8, "calle":"Concha Espina", "incidencias":0, "estado":"Inactivo"},
         {"id":9, "calle":"Calle Alberto Alcocer", "incidencias":1, "estado":"Activo"},
-        {"id":10," calle":"Calle López de Hoyos", "incidencias":0, "estado":"Inactivo"}
+        {"id":10,"calle":"Calle López de Hoyos", "incidencias":0, "estado":"Inactivo"}
     ],
     "Sur":[
         {"id":1, "calle":"Avenida de Córdoba", "incidencias":1, "estado":"Activo"},
@@ -33,7 +33,7 @@
         {"id":7, "calle":"Avenida de Andalucía", "incidencias":2, "estado":"Activo"},
         {"id":8, "calle":"Calle Antonio López", "incidencias":1, "estado":"Activo"},
         {"id":9, "calle":"Paseo de Santa María de la Cabeza", "incidencias":0, "estado":"Inactivo"},
-        {"id":10," calle":"Calle Marcelo Usera", "incidencias":1, "estado":"Activo"}
+        {"id":10,"calle":"Calle Marcelo Usera", "incidencias":1, "estado":"Activo"}
     ],
     "Este":[
         {"id":1, "calle":"Calle Alcalá", "incidencias":1, "estado":"Activo"},
@@ -45,7 +45,7 @@
         {"id":7, "calle":"Avenida de Daroca", "incidencias":2, "estado":"Activo"},
         {"id":8, "calle":"Calle Alcalá Norte", "incidencias":1, "estado":"Activo"},
         {"id":9, "calle":"Avenida de Guadalajara", "incidencias":0, "estado":"Inactivo"},
-        {"id":10," calle":"Calle José del Hierro", "incidencias":1, "estado":"Activo"}
+        {"id":10,"calle":"Calle José del Hierro", "incidencias":1, "estado":"Activo"}
     ],
     "Oeste":[
         {"id":1, "calle":"Paseo de Extremadura", "incidencias":1, "estado":"Activo"},
@@ -57,6 +57,6 @@
         {"id":7, "calle":"Paseo de Pintor Rosales", "incidencias":0, "estado":"Inactivo"},
         {"id":8, "calle":"Calle Isaac Peral", "incidencias":1, "estado":"Activo"},
         {"id":9, "calle":"Avenida de Portugal", "incidencias":2, "estado":"Activo"},
-        {"id":10," calle":"Carretera de Castilla", "incidencias":0, "estado":"Inactivo"}
+        {"id":10,"calle":"Carretera de Castilla", "incidencias":0, "estado":"Inactivo"}
     ]
 }

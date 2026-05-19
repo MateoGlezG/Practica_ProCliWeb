@@ -21,6 +21,10 @@ const ciudades = {
     "Sevilla": {
         location: [37.3891, -5.9845],
         networkId: "sevici"
+    },
+    "León": {
+        location: [42.5982636,-5.5661249],
+        networkId:"alsa-nextbike-leon"
     }
 };
 
