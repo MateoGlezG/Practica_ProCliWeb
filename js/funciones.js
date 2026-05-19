@@ -105,7 +105,7 @@
                         contenido += `<strong>Espacios disponibles:</strong> ${estacion.espacios}`;
                         $("#modalCuerpo").html(contenido);
                         
-                        const modal = new bootstrap.Modal(document.getElementById('modalEstacion'));
+                        const modal = new bootstrap.Modal(document.getElementById("modalEstacion")); // tambien se puede poner dentro como $("#modalEstacion"
                         modal.show();
                     });
                 });
