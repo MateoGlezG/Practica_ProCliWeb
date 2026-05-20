@@ -144,3 +144,32 @@ aside div{
 .sin-atasco{
     background-color: #58A4B060 !important;
 }
+
+
+/* notas
+   - .container-fluid: ocupar el 100% del ancho
+   - .row: Define la fila principal que divide la interfaz en barra lateral y contenido central.
+   - .col-12 .col-sm-3: Configuración responsiva para el ASIDE. En móviles ocupa todo el ancho (col-12) y en 
+   pantallas medianas en adelante se reduce a 3 columnas para permitir la vista lateral.
+   - .vh-100: Asegura que el layout principal tenga una altura igual al 100% de la ventana del navegador.
+   - .d-none: Oculta los contenedores inicialmente, despues jQuery elimina esta clase
+
+   - .navbar / .navbar-dark: Estructura la navegación superior con el logo a la izquierda y opciones a la derecha
+   - .card / .card-body: Contenedor de cards con padding y cosas
+   - .modal / .fade: Ventana emergente y el .fade sirve para animación
+   - .table / .table-hover: Estiliza la tabla de trafico
+
+   - .d-flex / .align-items-center: Las usamos para alinear el logo y el texto de bienvenida de forma 
+    vertical y horizontal en el panel de inicio
+   - .p-4 / .mt-3: Paddings y margins
+   - .rounded / .shadow-sm: Esquinas redondeadas y sombras
+   Hay otras como:
+   - .spinner-border
+   - .alert 
+   - .badge
+   - .btn-outline-primary
+   - .btn-lg
+   - .text-truncate (trunca el texto con ...)
+   - .pagination: sirve para mostrar por ejemplo de 5 en 5 elementos
+   Se pueden poner tanto en class="..." como reescribir en .css con el !important, o con JQuery haciendo .addClass("...") o removeClass("..")
+*/
