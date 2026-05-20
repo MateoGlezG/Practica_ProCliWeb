@@ -5,6 +5,8 @@
         e.preventDefault();
         // MOSTRAR SIDEBAR
         $("#barraLateral").removeClass("d-none");
+        $("main").removeClass("col-sm-9");
+        $("main").addClass("col-sm-9");
         // OCULTAR TODO
         $("main").removeClass("inicio");//quito el estilo
         $("#menuBicicletas").addClass("d-none");
@@ -32,6 +34,8 @@
         e.preventDefault();
         // MOSTRAR SIDEBAR
         $("#barraLateral").removeClass("d-none");
+        $("main").removeClass("col-sm-9"); //lo elimino y lo añado para evitar que este la clase mas de una vez
+        $("main").addClass("col-sm-9");
         // OCULTAR TODO
         $("main").removeClass("inicio");//quito el estilo
         $("#menuBicicletas").addClass("d-none");
@@ -57,6 +61,7 @@
         $("#menuBicicletas").addClass("d-none");
         $("#menuTrafico").addClass("d-none");
 
+    $("main").removeClass("col-sm-9"); //para que en el main en el inicio ocupe todo
         $("main").addClass("inicio");
         $("#panelInicio").removeClass("d-none");
     })

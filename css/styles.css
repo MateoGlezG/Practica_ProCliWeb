@@ -40,6 +40,7 @@ nav{
 /*Inicio*/
 main{
   background-color: #344966;  
+  height:100%;
 }
 
 #panelInicio{
@@ -92,8 +93,16 @@ aside div{
 }
 #menuTrafico{
     height: clamp(260px, 60vh, 720px);
-
 }
+@media (max-width:576px) { /*media querry para cuando ocupe col-12 se adapte el menu, sm=576px*/
+    #menuBicicletas{
+        height: 20vh;
+    }
+    #menuTrafico{
+        height: 20vh;
+    }
+}
+
 #panelTrafico{
     height: 60vh;
 }
