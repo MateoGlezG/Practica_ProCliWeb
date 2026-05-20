@@ -94,6 +94,9 @@ aside div{
     height: clamp(260px, 60vh, 720px);
 
 }
+#panelTrafico{
+    height: 60vh;
+}
 
 #modalEstacion {
     padding-top: 10%;

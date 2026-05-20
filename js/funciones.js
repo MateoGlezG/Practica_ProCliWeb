@@ -20,6 +20,7 @@
         capaMarcadores.clearLayers();
         cargarEstaciones("Madrid").done(function() { // Por defecto cargamos las estaciones de Madrid al hacer click en Bicicletas y las pintamos
             pintarMarcadores("Madrid");
+            postCiudadesServidor("Madrid");
         });
         // RECALCULAR EL TAMAÑO DEL MAPA, PARA EVITAR PROBLEMAS DE RENDERIZADO
         setTimeout(function () {
@@ -83,6 +84,8 @@
             cargarEstaciones(ciudadSeleccionada).done(function() {
                 pintarMarcadores(ciudadSeleccionada);
             });
+
+           postCiudadesServidor(ciudadSeleccionada);
         }
         });
 
@@ -100,7 +103,7 @@
 
                     marcador.on('click', function() { // Modal al hacer click
                         $("#modalTitulo").text(estacion.nombre);
-                        let contenido = `<strong>Ciudad:</strong> ${ciudadSeleccionada}<br>`;
+                        let contenido = `<strong>Ciudad:</strong> ${ciudadSeleccionada}<br>`; //<br> para que haga un salto de linea
                         contenido += `<strong>Bicicletas disponibles:</strong> ${estacion.bicis}<br>`;
                         contenido += `<strong>Espacios disponibles:</strong> ${estacion.espacios}`;
                         $("#modalCuerpo").html(contenido);

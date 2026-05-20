@@ -2,6 +2,7 @@
  //variables que se van a ir rellenando segun se saquen datos de los json
  let estacionesBicis = {};
  let traficoZonas = {};
+ let ciudadesVisitadas=[]; //almacena las ciudades que se han visitado surante la visita a la web
 
  //BICICLETAS
  // DATOS DE CADA CIUDAD
@@ -50,6 +51,35 @@ function procesarEstaciones(data, ciudadSeleccionada){
         bicis: estacion.free_bikes,
         espacios: estacion.empty_slots
     }));
+}
+
+function postCiudadesServidor(ciudadSeleccionada){
+    let city = { //city es un array de las ciudades
+        name: ciudadSeleccionada,
+        location: ciudades[ciudadSeleccionada].location,
+        networkId: ciudades[ciudadSeleccionada].networkId
+    };
+    let urlJson = `datos/ciudades`; //poner la ruta donde queremos que se guarde y el nombre del fichero sin el .json q lo pone el server
+    ciudadesVisitadas.push(city); //metodo push es para añadir un elemento a un array
+
+    //creamos el parametro para ajax
+    const parametroAjax={
+        url: urlJson,
+        method: 'POST',
+        data: JSON.stringify(ciudadesVisitadas),
+        contentType: 'application/json; charset=uft-8',
+        dataType: 'json'
+    }
+
+    //post al servidor
+    $.ajax(parametroAjax)
+        .done(function(){
+            console.log("Se han enviado las ciudades al servidor");
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.error('Error al enviar los datos de la ciudad');
+            console.error(textStatus, errorThrown);
+    });
 }
 
 //DATOS DEL TRÁFICO
